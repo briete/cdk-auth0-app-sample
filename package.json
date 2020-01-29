@@ -1,0 +1,49 @@
+{
+  "name": "cdk-auth0-lambda-authoraizer-sample",
+  "version": "0.1.0",
+  "bin": {
+    "cdk-auth0-lambda-authoraizer-sample": "bin/cdk-auth0-lambda-authoraizer-sample.js"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build:cdk &&  npm run build:modules && npm run build:app:node",
+    "build:cdk": "tsc -p tsconfig.cdk.json",
+    "build:modules": "node bin/bundle-npm.js",
+    "build:app:node": "tsc -p tsconfig.src.json",
+    "deploy": "cdk deploy",
+    "clean": "shx rm -rf ./dist && shx rm -rf ./cdk.out && shx rm -rf './{src,lib}/**/*.js' && shx rm -rf './{src,lib}/**/*.d.ts'",
+    "lint": "eslint --cache './{bin,lib,src,test}/**/*.ts'",
+    "lint-fix": "eslint --cache --fix './{bin,lib,src,test}/**/*.ts'"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "^1.22.0",
+    "@aws-cdk/aws-apigateway": "^1.22.0",
+    "@aws-cdk/aws-lambda": "^1.22.0",
+    "@aws-cdk/aws-ssm": "^1.22.0",
+    "@types/fs-extra": "^8.0.1",
+    "@types/jest": "^24.0.22",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/node": "10.17.5",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "aws-cdk": "^1.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "fs-extra": "^8.1.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "removeNPMAbsolutePaths": "^2.0.0",
+    "shx": "^0.3.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "^1.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^1.6.2",
+    "source-map-support": "^0.5.16",
+    "util": "^0.12.1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "./dist/src"
+  },
+  "exclude": [
+    "cdk.out",
+    "dist",
+    "node_modules",
+    "test",
+    "lib"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ]
+}

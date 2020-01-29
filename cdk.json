@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node bin/cdk-auth0-lambda-authoraizer-sample.ts"
+}
