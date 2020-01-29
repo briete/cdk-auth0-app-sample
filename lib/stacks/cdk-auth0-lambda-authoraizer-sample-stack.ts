@@ -28,17 +28,29 @@ export class CdkAuth0LambdaAuthoraizerSampleStack extends cdk.Stack {
         );
 
         // パラメータストアから、Auth0の情報を取得
-        const jwksUri = ssm.StringParameter.fromStringParameterAttributes(this, 'jwksURI', {
-            parameterName: '/cmsatonaoya/JWKS_URI',
-        }).stringValue;
+        const jwksUri = ssm.StringParameter.fromStringParameterAttributes(
+            this,
+            'jwksURI',
+            {
+                parameterName: '/cmsatonaoya/JWKS_URI',
+            },
+        ).stringValue;
 
-        const audience = ssm.StringParameter.fromStringParameterAttributes(this, 'audience', {
-            parameterName: '/cmsatonaoya/AUDIENCE',
-        }).stringValue;
+        const audience = ssm.StringParameter.fromStringParameterAttributes(
+            this,
+            'audience',
+            {
+                parameterName: '/cmsatonaoya/AUDIENCE',
+            },
+        ).stringValue;
 
-        const tokenIssuer = ssm.StringParameter.fromStringParameterAttributes(this, 'tokenIssuer', {
-            parameterName: '/cmsatonaoya/TOKEN_ISSUER',
-        }).stringValue;
+        const tokenIssuer = ssm.StringParameter.fromStringParameterAttributes(
+            this,
+            'tokenIssuer',
+            {
+                parameterName: '/cmsatonaoya/TOKEN_ISSUER',
+            },
+        ).stringValue;
 
         // Lambda Authorizer
         const auth0AuthorizerFunction = new lambda.Function(
